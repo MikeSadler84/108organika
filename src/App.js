@@ -5,6 +5,7 @@ import QuantityPicker from "./components/quantityPicker.jsx";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import FooterBar from "./components/footerBar";
+import ItemSelector from "./components/item";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <div className="App container-fluid">
         <h1>Hello React!!</h1>
         <QuantityPicker></QuantityPicker>
+        <ItemSelector></ItemSelector>
       </div>
       <FooterBar></FooterBar>
     </React.Fragment>

@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class FooterBar extends Component {
   render() {
-    return <footer>Organika - Copyright &copy; Michael Sadler</footer>;
+    return (
+      <footer className="footer">
+        Organika - Copyright &copy; Michael Sadler
+      </footer>
+    );
   }
 }
 
