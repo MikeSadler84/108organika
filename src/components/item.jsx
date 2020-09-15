@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class ItemSelector extends Component {
   state = {
     quantity: 1,
+    price: 60,
   };
   render() {
     return (
@@ -15,7 +16,7 @@ class ItemSelector extends Component {
           ></img>
         </div>
         <div>
-          <p>$60</p>
+          <p>${this.state.price}</p>
         </div>
         <div>
           <button onClick={this.increase} className="btn btn-sm btn-info">
