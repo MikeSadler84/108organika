@@ -38,19 +38,6 @@
   }
 }
 
-.todo {
-  margin: 20px 0 0 20px;
-}
-
-.img {
-  margin-top: 2rem;
-}
-
-.img p {
-  font-size: 2rem;
-  color: red;
-}
-
 label {
   margin: 0 .5rem 0 .5rem;
   font-size: 1.2rem;
@@ -58,9 +45,20 @@ label {
 
 .footer {
   text-align: center;
+  color: white;
   margin-top: 2rem;
+  background-color: rgb(62, 134, 243);
+  padding: 2rem 0 2rem 0;
 }
 
 .menu {
   text-align: left;
+}
+
+.btn {
+  display: flex;
+}
+
+.wrap {
+  min-height: calc(100vh - 208px);
 }

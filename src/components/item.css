@@ -1,0 +1,53 @@
+.item {
+    margin-top: 2rem;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 270px;
+    height: 355px;
+    border: 1px solid lightgray;
+    padding: 0 10px 10px 10px;
+}
+
+label {
+    margin: 0 .5rem 0 .5rem;
+    font-size: 1.2rem;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.quantityPicker,
+.btn {
+    display: inline-block;
+}
+
+.quantityPicker {
+    margin-right: .5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+h5,
+h6 {
+    display: inline-block;
+}
+
+h5 {
+    color: red;
+    margin-right: 1rem;
+}
+
+h6 {
+    color: black;
+
+}
+
+.item img {
+    width: 200px;
+}
