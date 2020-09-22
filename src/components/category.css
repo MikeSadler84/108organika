@@ -1,0 +1,18 @@
+.category {
+    display: inline-block;
+    background-color: white;
+    border: 2px solid rgb(207, 207, 207);
+    padding: 1rem;
+    margin: 3rem 1rem 1rem 1rem;
+    border-radius: 10px;
+    height: 3.7rem;
+    width: 12rem;
+}
+
+.category:hover {
+    cursor: pointer;
+}
+
+.active-cat {
+    border: 2px solid rgb(243, 202, 156);
+}

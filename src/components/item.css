@@ -4,9 +4,10 @@
     margin-bottom: 10px;
     display: inline-block;
     width: 270px;
-    height: 355px;
+    height: 400px;
     border: 1px solid lightgray;
     padding: 0 10px 10px 10px;
+    background-color: white;
 }
 
 label {
@@ -19,13 +20,13 @@ label {
     margin-top: 2rem;
 }
 
-.quantityPicker,
-.btn {
-    display: inline-block;
-}
+
 
 .quantityPicker {
     margin-right: .5rem;
+    margin-top: -1rem;
+    display: inline-block;
+    font-size: 2.5rem;
 }
 
 h4 {
@@ -41,6 +42,7 @@ h6 {
 h5 {
     color: red;
     margin-right: 1rem;
+
 }
 
 h6 {
@@ -50,4 +52,31 @@ h6 {
 
 .item img {
     width: 200px;
+}
+
+.catTitle {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.cartTxt {
+    font-size: .9rem;
+    padding: 0 2rem;
+}
+
+.btn {
+    margin-top: .5rem;
+}
+
+.priceTxt {
+    color: gray;
+}
+
+.totalTxt {
+    color: red;
+    font-size: 1.1rem;
+}
+
+.total {
+    margin-left: .5rem;
 }

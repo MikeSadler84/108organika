@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 class QuantityPicker extends Component {
   state = {
-    quantity: 1,
-    name: "Mike",
+    quantity: this.props.value,
   };
   render() {
     return (
@@ -11,10 +10,10 @@ class QuantityPicker extends Component {
         <button onClick={this.increase} className="btn btn-sm btn-info">
           +
         </button>
-        <label>{this.state.quantity}</label>
+        <label className="quantity">{this.state.quantity}</label>
         <button
           onClick={this.decrease}
-          disabled={this.state.quantity === 0}
+          disabled={this.state.quantity === this.props.minimum}
           className="btn btn-sm btn-info"
         >
           -
@@ -24,12 +23,15 @@ class QuantityPicker extends Component {
   }
 
   increase = () => {
-    this.setState({ quantity: this.state.quantity + 1 });
+    let value = this.state.quantity + this.props.minimum;
+    this.setState({ quantity: value });
+    this.props.onValueChange(value);
   };
   decrease = () => {
-    let newVal = this.state.quantity - 1;
-    if (newVal >= 0) {
+    let newVal = this.state.quantity - this.props.minimum;
+    if (newVal >= this.props.minimum) {
       this.setState({ quantity: newVal });
+      this.props.onValueChange(newVal);
     }
   };
 }

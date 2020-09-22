@@ -1,5 +1,16 @@
+#root {
+  background-color: rgb(240, 240, 240);
+}
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -60,5 +71,6 @@ label {
 }
 
 .wrap {
-  min-height: calc(100vh - 208px);
+  min-height: calc(100vh - 176px);
+
 }

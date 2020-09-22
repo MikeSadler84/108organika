@@ -19,12 +19,13 @@ var data = [
   },
   {
     id: "5f40a6baa9e6e22fa1d5fac4",
-    price: 32.0,
+    price: 2.0,
     stock: 20,
-    title: "Strawberry",
+    title: "Organic Eggs",
     image: "img-15.jpg",
     discount: 0,
-    category: "Fruit",
+    minimum: 6,
+    category: "Dairy & Eggs",
   },
   {
     id: "5f40a6baf0f068a497921d29",
@@ -37,11 +38,12 @@ var data = [
   },
   {
     id: "5f40a866337a3bb00793da52",
-    price: 16.39,
+    price: 2.5,
     stock: 34,
     title: "Banana",
     image: "img-5.jpg",
     discount: 4,
+    minimum: 4,
     category: "Fruit",
   },
   {
@@ -55,11 +57,12 @@ var data = [
   },
   {
     id: "5f40a866ea0a04e6891212333",
-    price: 12.0,
+    price: 1.0,
     stock: 11,
-    title: "Egg",
+    title: "Eggs",
     image: "img-15.jpg",
     discount: 12,
+    minimum: 12,
     category: "Dairy & Eggs",
   },
   {

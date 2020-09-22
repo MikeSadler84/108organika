@@ -1,3 +1,9 @@
 .catTitle {
     margin-top: 2rem;
+    margin-left: .1rem;
+}
+
+.cart {
+    margin-right: .5rem;
+    margin-left: .5rem;
 }
