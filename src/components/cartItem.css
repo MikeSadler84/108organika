@@ -1,0 +1,14 @@
+.cartItem {
+    display: flex;
+    background-color: white;
+}
+
+.cartImg {
+    flex: 1;
+
+}
+
+.cartItem,
+.cartInfo {
+    flex: 1;
+}

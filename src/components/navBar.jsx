@@ -4,6 +4,7 @@ import React, { Component } from "react"; // imrc is the shortcut
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import "./navbar.css";
+import { connect } from "react-redux";
 
 //cc is the shortcut for this
 
@@ -31,7 +32,7 @@ class NavBar extends Component {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
-                Home <span class="sr-only">(current)</span>
+                Home <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
@@ -47,9 +48,9 @@ class NavBar extends Component {
           </ul>
           <div className="form-inline my-2 my-lg-0">
             <Link className="btn btn-outline-light my-2 my-sm-0" to="/cart">
-              <i class="fa fa-shopping-cart navCart" aria-hidden="true"></i>{" "}
+              <i className="fa fa-shopping-cart navCart" aria-hidden="true"></i>{" "}
               Cart
-              <span class="badge badge-light">4</span>
+              <span className="badge badge-light">{this.props.count}</span>
             </Link>
           </div>
         </div>
@@ -57,8 +58,13 @@ class NavBar extends Component {
     );
   }
 }
-
-export default NavBar;
+// Connects to the state
+const mapStateToProps = (state) => {
+  return {
+    count: state.cart.length, // changed this from state.count to state.cart.length to read what is in the cart
+  };
+};
+export default connect(mapStateToProps, null)(NavBar);
 
 /* 
 

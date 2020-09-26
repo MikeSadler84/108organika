@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addTodo } from "./../store/actions/index";
 
 class Todo extends Component {
   state = {
     todoText: "", //Use this if using an input field that someone can type into
-    todoList: [],
+    //the local state deletes if you leave the page / store doesn't wipe the information until you reload the page
   };
   render() {
     return (
@@ -21,7 +23,9 @@ class Todo extends Component {
         </div>
 
         <div className="list">
-          {this.state.todoList.map((t) => (
+          {this.props.todo.map((
+            t //reading from the store
+          ) => (
             <div className="item">{t}</div>
           ))}
           <hr></hr>
@@ -32,7 +36,7 @@ class Todo extends Component {
   }
 
   getTodoCount = () => {
-    let count = this.state.todoList.length;
+    let count = this.props.todo.length; //reading from the store
     if (count === 1) {
       return <label>We have {count} element in the list</label>;
     }
@@ -45,14 +49,19 @@ class Todo extends Component {
 
   addTodo = () => {
     if (this.state.todoText) {
-      let todoList = [...this.state.todoList, this.state.todoText]; //Making a copt of the array in state using spread operator //push the todoList to the todoText
+      //Making a copt of the array in state using spread operator //push the todoList to the todoText
+      this.props.addTodo(this.state.todoText); //add this to push to the store
       this.setState({
-        todoList: todoList,
         todoText: "",
       }); // adds to the array and clears the text in the input
-      // this.setState({ todoList, todoText: "" }); does the same as above because the property and variable names are the same
+
       console.log("adding", this.state.todoText);
     }
   };
 }
-export default Todo;
+const mapStateToProps = (state) => {
+  return {
+    todo: state.todo,
+  };
+};
+export default connect(mapStateToProps, { addTodo })(Todo);

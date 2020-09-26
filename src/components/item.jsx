@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import QuantityPicker from "./quantityPicker";
 import "./item.css";
+import { connect } from "react-redux";
+import { incrementCartCounter, addProduct } from "./../store/actions/index";
 
 class ItemSelector extends Component {
   state = {
@@ -37,21 +39,31 @@ class ItemSelector extends Component {
               ${this.props.product.price * this.state.quantity}
             </span>
           </h6>
-          <button className="btn btn-primary btn-add">
-            <i class="fa fa-shopping-cart cart" aria-hidden="true"></i>
+          <button onClick={this.addCart} className="btn btn-primary btn-add">
+            <i className="fa fa-shopping-cart cart" aria-hidden="true"></i>
             <span className="cartTxt">Add to cart</span>
           </button>
         </div>
       </div>
     );
   }
+  addCart = () => {
+    const addedProduct = {
+      product: this.props.product,
+      quantity: this.state.quantity,
+    };
+    this.props.incrementCartCounter(); //dispatches an action to the store
+    this.props.addProduct(addedProduct); //dispatches addProduct
+  };
   handleQuantityChange = (qnty) => {
     console.log("Quantity:" + qnty);
     this.setState({ quantity: qnty });
   };
 }
-
-export default ItemSelector;
+//add all actions down here
+export default connect(null, { incrementCartCounter, addProduct })(
+  ItemSelector
+);
 
 /*
 
