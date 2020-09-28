@@ -28,7 +28,7 @@ class CartItem extends Component {
             {this.props.product.quantity * this.props.product.product.price}
           </label>
         </div>
-        <button onClick={this.removeProduct} className="cartButton">
+        <button onClick={this.removeProduct} className=" btn-danger cartButton">
           <i className="far fa-trash"></i>
         </button>
       </div>
