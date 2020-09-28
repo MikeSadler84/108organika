@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { incrementCartCounter } from "./../store/actions/index";
 import CartItem from "./cartItem";
+import "./cart.css";
 
 class Cart extends Component {
   state = {};
