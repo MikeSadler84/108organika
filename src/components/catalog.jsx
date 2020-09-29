@@ -61,10 +61,11 @@ class Catalog extends Component {
     this.setState({ selectedCategory: catName });
     console.log(catName);
   };
-  componentDidMount() {
+  //make the parent async when its child is an async function
+  async componentDidMount() {
     // perfect place to get data from server / database / AJAX - outside of the render
     let service = new ItemService();
-    const data = service.getProducts();
+    const data = await service.getProducts(); //have to add await because it is an async function
 
     this.setState({ items: data });
 

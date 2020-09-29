@@ -60,8 +60,13 @@ class ItemSelector extends Component {
     this.setState({ quantity: qnty });
   };
 }
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+  };
+};
 //add all actions down here
-export default connect(null, { incrementCartCounter, addProduct })(
+export default connect(mapStateToProps, { incrementCartCounter, addProduct })(
   ItemSelector
 );
 

@@ -9,7 +9,6 @@ class Cart extends Component {
   render() {
     return (
       <div>
-        <h1>Cart</h1>
         <h3>There are {this.props.products.length} items in your cart</h3>
         <div className="itemsInCart">
           {this.props.products.map((product) => (

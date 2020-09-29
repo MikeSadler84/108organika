@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "./cartItem.css";
+import { removeProduct } from "./../store/actions/index";
 
 class CartItem extends Component {
   state = {};
@@ -29,14 +31,14 @@ class CartItem extends Component {
           </label>
         </div>
         <button onClick={this.removeProduct} className=" btn-danger cartButton">
-          <i className="far fa-trash"></i>
+          <i className="fa fa-trash" aria-hidden="true"></i>
         </button>
       </div>
     );
   }
   removeProduct = () => {
-    console.log("Remove");
+    this.props.removeProduct(this.props.product.product.id);
   };
 }
 
-export default CartItem;
+export default connect(null, { removeProduct })(CartItem);

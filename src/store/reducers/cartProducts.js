@@ -1,3 +1,4 @@
+import ItemService from "./../../services/itemService";
 const cartProductsReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_PRODUCT":
@@ -23,7 +24,21 @@ const cartProductsReducer = (state = [], action) => {
       if (!found) {
         cart.push(action.payload);
       }
+      //update cart on the server
+      let service = new ItemService();
+
+      //verify if there is a cart for userName
+
+      //if so, send put
+
+      //else, send post
+
+      service.getCart("Mike", cart);
       return cart; //must copy/create a new array with the spread operator, cannot modify the state directly
+
+    case "REMOVE_PRODUCT":
+      return [...state.filter((pc) => pc.product.id !== action.payload)]; //filter the array and choose what is not equal to the payload to remove
+
     default:
       return state;
   }

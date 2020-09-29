@@ -20,3 +20,10 @@ export const addProduct = (product) => {
     payload: product,
   };
 };
+// Use the Id to choose what to remove
+export const removeProduct = (productId) => {
+  return {
+    type: "REMOVE_PRODUCT",
+    payload: productId,
+  };
+};
